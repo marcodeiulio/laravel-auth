@@ -64,6 +64,8 @@
             margin-bottom: 30px;
         }
     </style>
+    <script src="{{ asset('js/front.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
 <body>
