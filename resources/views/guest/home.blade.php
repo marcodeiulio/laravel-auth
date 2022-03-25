@@ -84,10 +84,7 @@
         </div>
         @endif
 
-        <div class="content">
-            <h1>Sito in costruzione</h1>
-            <div id="root">
-            </div>
+        <div id="root">
         </div>
     </div>
 </body>
