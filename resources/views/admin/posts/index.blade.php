@@ -2,7 +2,14 @@
 
 @section('main_content')
 <div class="container">
-	<h1>I miei post</h1>
+	<header>
+		<h1>I miei post</h1>
+	</header>
+	@if(session('message'))
+	<div class="alert alert-{{ session('type') ?? 'info' }}">
+		{{ session('message') }}
+	</div>
+	@endif
 	<table class="table">
 		<thead>
 			<tr>
@@ -24,6 +31,11 @@
 				<td>{{ $post->updated_at }}</td>
 				<td class="d-flex justify-content-end align-items-center">
 					<a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-sm btn-outline-info">Details</a>
+					<form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
+						@method('DELETE')
+						@csrf
+						<button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+					</form>
 				</td>
 			</tr>
 			@empty
