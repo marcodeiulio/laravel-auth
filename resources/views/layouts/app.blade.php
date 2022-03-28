@@ -9,7 +9,7 @@
 <body>
     @include('includes.header')
     <div id="app">
-        <main class="py-4">
+        <main class="container py-4">
             @yield('main_content')
         </main>
     </div>
