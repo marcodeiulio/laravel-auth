@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('main_content')
 <header>
 	<div class="container">
 		<h1>I miei post</h1>
