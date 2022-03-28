@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('main_content')
-<header class="d-flex justify-content-between align-items-center">
+<header class="d-flex justify-content-between align-items-center mb-4">
 	<h1>I miei post</h1>
 	<span>
 		<a href="{{ route('admin.posts.create') }}" class="btn btn-big btn-outline-success">Create new post</a>
@@ -12,7 +12,7 @@
 	{{ session('message') }}
 </div>
 @endif
-<table class="table">
+<table class="table table-dark">
 	<thead>
 		<tr>
 			<th scope="col">#</th>
@@ -33,6 +33,7 @@
 			<td>{{ $post->updated_at }}</td>
 			<td class="d-flex justify-content-end align-items-center">
 				<a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-sm btn-outline-info">Details</a>
+				<a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-sm btn-outline-warning mx-3">Edit</a>
 				<form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
 					@method('DELETE')
 					@csrf

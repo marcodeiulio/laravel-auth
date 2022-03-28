@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('main_content')
+<a href="{{ route('admin.posts.index') }}" class="btn btn-big btn-outline-info mb-4">Back to Index</a>
+
 <form action="{{ route('admin.posts.store') }}" method="POST">
 	@csrf
 	<div class="mb-3">
