@@ -23,7 +23,7 @@
 				{{-- <td>{{ $post->created_at }}</td> --}}
 				<td>{{ $post->updated_at }}</td>
 				<td class="d-flex justify-content-end align-items-center">
-					Actions
+					<a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-sm btn-outline-info">Details</a>
 				</td>
 			</tr>
 			@empty
